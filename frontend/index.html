@@ -1,1 +1,97 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Habits App</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Good Habits</h1>
+            <nav>
+                <button id="dashboard-btn" class="active">Dashboard</button>
+                <button id="habits-btn">My Habits</button>
+                <button id="settings-btn">Settings</button>
+            </nav>
+        </header>
+        
+        <main>
+            <div id="dashboard-view" class="view active">
+                <h2>Your Habit Categories</h2>
+                <div class="categories-container">
+                    <div class="category-card">
+                        <h3>Throughout the day</h3>
+                        <ul id="throughout-day-list" class="habit-list">
+                            <!-- Habits will be loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>Once a day</h3>
+                        <ul id="once-day-list" class="habit-list">
+                            <!-- Habits will be loaded here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>Once a week</h3>
+                        <ul id="once-week-list" class="habit-list">
+                            <!-- Habits will be loaded here -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Notification History</h2>
+                <div id="notification-history" class="notification-history">
+                    <!-- Notification history will be loaded here -->
+                </div>
+            </div>
+            
+            <div id="habits-view" class="view">
+                <h2>Manage Your Habits</h2>
+                <form id="add-habit-form">
+                    <input type="text" id="habit-description" placeholder="Enter a new habit">
+                    <select id="habit-frequency">
+                        <option value="THROUGHOUT_DAY">Throughout the day</option>
+                        <option value="ONCE_A_DAY">Once a day</option>
+                        <option value="ONCE_A_WEEK">Once a week</option>
+                    </select>
+                    <button type="submit">Add Habit</button>
+                </form>
+                
+                <div id="all-habits-list" class="all-habits">
+                    <!-- All habits will be loaded here -->
+                </div>
+            </div>
+            
+            <div id="settings-view" class="view">
+                <h2>Settings</h2>
+                <div class="setting-group">
+                    <h3>Notification Settings</h3>
+                    <div class="setting">
+                        <label for="notification-frequency">Notification Frequency</label>
+                        <select id="notification-frequency">
+                            <option value="LOW">Low (Fewer notifications)</option>
+                            <option value="MEDIUM" selected>Medium</option>
+                            <option value="HIGH">High (More notifications)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="notification-popup" class="notification-popup">
+        <h3>Time for a habit!</h3>
+        <p id="notification-habit-text">Habit description goes here</p>
+        <div class="notification-actions">
+            <button id="dismiss-btn">Dismiss</button>
+            <button id="complete-btn">Complete</button>
+        </div>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
